@@ -34,6 +34,7 @@ class Fav_Characters(Base):
     id_fav_characters = Column(Integer, primary_key=True)
     id_user = Column(Integer, ForeignKey('user.id_user'))
     id_characters = Column(Integer, ForeignKey('characters.id_characters'))
+    characters = relationship(Characters)
 
 class Fav_Planets(Base):
     __tablename__= 'fav_planets'
@@ -41,6 +42,7 @@ class Fav_Planets(Base):
     id_fav_planets = Column(Integer, primary_key=True)
     id_user = Column(Integer, ForeignKey('user.id_user'))
     id_planets = Column(Integer, ForeignKey('planets.id_planets'))
+    planets = relationship(Planets)
 
     def to_dict(self):
         return {}
